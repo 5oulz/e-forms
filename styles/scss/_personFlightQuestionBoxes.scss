@@ -1,0 +1,131 @@
+$person-box-height: 200px;
+$person-box-bottom-top-height: 200px/2;
+
+// change input height if these values change
+
+// person css
+.person-box,
+.flight-box {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: $person-box-height;
+    margin: 30px 0;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2px 2px 0 rgba(102, 102, 102, 0.12);
+    background-color: palette(background, person-boxes);
+    border-left: 3px solid palette(border, box-left-border);
+}
+
+.person-images,
+.person-info {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: $person-box-bottom-top-height;
+    padding: 0 30px;
+    z-index: 2;
+}
+
+.person-images {
+    padding-top: 30px;
+}
+.cmdt-icon,
+.cmdt-label {
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 0px auto;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    color: palette(text, dark);
+}
+
+.person-info-field {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 0 30px;
+}
+
+.person-info-label {
+    display: block;
+    width: 100%;
+    height: 20px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: palette(text, label);
+}
+
+.person-info-input {
+    display: block;
+    width: 100%;
+    height: 32px; // if heights change change here
+    box-shadow: inset 0 3px 0 0 rgba(0, 0, 0, 0.06);
+    border: solid 1px palette(border);
+    border-radius: 4px;
+    padding: 0 10px;
+    color: palette(text, dark);
+}
+
+.flight-box-info {
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 140px;
+}
+
+.flight-box-leg-info {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding-top: 50px;
+}
+
+.flight-box-leg-name,
+.flight-box-leg-number {
+    width: 100%;
+    height: 30px;
+    color: palette(text, dark);
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+}
+
+.flight-box-leg-name {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 2;
+}
+
+.flight-box-icon {
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 55px;
+    left: 50%;
+    margin-left: -30px;
+}
+
+.flight-box-button {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    line-height: 60px;
+    text-align: center;
+    color: palette(border, box-left-border);
+    font-size: 12px;
+}

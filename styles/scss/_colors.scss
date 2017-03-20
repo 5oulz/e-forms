@@ -1,0 +1,67 @@
+// blacks
+$black-500: #333333;
+
+// blues
+$blue-500: #1691bd;
+
+// grays
+$gray-200: #fdfdfd; 
+$gray-300: #f4f4f4;
+$gray-400: #eeeeee;
+$gray-500: #d9d9d9;
+$gray-700: #666;
+
+// whites
+$white-100: #fff;
+
+// greens
+$green-500: #7ed321;
+
+// yellows
+$yellow-500: #f8e81c;
+
+// orange
+$orange-500: #f6a623;
+
+
+// if you want to create a new theme, just do so creating a new palette. then change the name on the mixin for the name of your palette
+$mainThemePalettes: (
+    header: (
+        base: $black-500
+    ),
+
+    footer: (
+        base: $black-500
+    ),
+
+    question-header: (
+        base: $blue-500
+    ),
+
+    text: (
+        dark: $black-500,
+        light: $white-100,
+        label: $gray-700
+    ),
+
+    answers: (
+        standard: $green-500,
+        non-standard: $orange-500,
+        n-a: #aaa // to change later
+    ),
+
+    border: (
+        base: $gray-500,
+        box-left-border: $blue-500
+    ),
+
+    background: (
+        base: $gray-300,
+        person-boxes: $gray-200
+    )
+);
+
+// SASS mixin to access color palettes
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($mainThemePalettes, $palette), $tone);
+}

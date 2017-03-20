@@ -1,0 +1,9 @@
+/**
+* mixins file
+*/
+
+@mixin ellipsis-style() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

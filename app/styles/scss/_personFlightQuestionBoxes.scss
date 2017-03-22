@@ -1,15 +1,22 @@
 $person-box-height: 200px;
 $person-box-bottom-top-height: 200px/2;
+$questions-sub-header-height: 40px;
+
+@mixin openQuestionTransition() {
+    -webkit-transition: height 0.33s ease-out;
+    -o-transition: height 0.33s ease-out;
+    transition: height 0.33s ease-out;
+}
 
 // change input height if these values change
 
 // person css
 .person-box,
-.flight-box {
+.flight-box,
+.question-item {
     display: block;
     position: relative;
     width: 100%;
-    height: $person-box-height;
     margin: 30px 0;
     border-radius: 3px;
     overflow: hidden;
@@ -18,6 +25,18 @@ $person-box-bottom-top-height: 200px/2;
     border-left: 3px solid palette(border, box-left-border);
 }
 
+.person-box,
+.flight-box {
+    height: $person-box-height;
+}
+
+.question-item {
+    border: none;
+}
+
+/**
+ * persons
+ **/
 .person-images,
 .person-info {
     display: block;
@@ -75,6 +94,9 @@ $person-box-bottom-top-height: 200px/2;
     color: palette(text, dark);
 }
 
+/**
+ * flight info
+ **/
 .flight-box-info {
     display: block;
     position: relative;
@@ -128,4 +150,131 @@ $person-box-bottom-top-height: 200px/2;
     text-align: center;
     color: palette(border, box-left-border);
     font-size: 12px;
+}
+
+/**
+ * questions
+ **/
+.question-item-header {
+     height: 75px;
+     padding: 25px 40px;
+     border-left: 3px solid palette(border, box-left-border);
+     cursor: pointer;
+}
+
+.question-item-header-number,
+.question-item-header-title,
+.sub-question-item-number,
+.sub-question-item-title {
+     display: inline-block;
+     position: relative;
+     height: 25px;
+     width: 30px;
+     height: 100%;
+     margin: 0;
+     line-height: 25px;
+     font-weight: 600;
+     font-size: 15px;
+     text-transform: uppercase;
+}
+
+.question-item-header-title,
+.sub-question-item-title {
+     width: 200px;
+}
+
+.questions-group-zone {
+     display: block;
+     position: relative;
+     width: 100%;
+}
+
+.question-sub-title {
+     display: block;
+     position: relative;
+     width: 100%;
+     height: 0px;
+     padding: 0 40px;
+     font-weight: 600;
+     font-size: 15px;
+     text-transform: uppercase;
+     background-color: palette(background, sub-title-questions);
+
+     @include openQuestionTransition();
+}
+
+.question-sub-header-name {
+     margin: 0;
+     line-height: $questions-sub-header-height;
+}
+
+.question-sub-question-item {
+     display: block;
+     position: relative;
+     width: 100%;
+     height: 0px;
+     padding: 25px 40px;
+     border: 1px solid palette(border, question-border);
+     background-color: #fff;
+
+     @include openQuestionTransition();
+}
+
+.sub-question-item-title {
+     text-transform: none;
+}
+
+.sub-question-answers-wrapper {
+    display: inline-block;
+    position: relative;
+    float: right;
+    width: 200px;
+}
+
+.radio-click-wrapper {
+    display: inline-block;
+    position: relative;
+    float: left;
+    width: 33.3%;
+    height: 100%;
+
+    input[type=radio] {
+        display: none;
+    }
+
+    label {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+        border-radius: 50%;
+        background-color: palette(background, base);
+    }
+
+    input:checked + label {
+        background-color: palette(answers, standard);
+    }
+
+    &:nth-of-type(2) {
+        input:checked + label {
+            background-color: palette(answers, non-standard);
+        }
+    }
+
+    &:nth-of-type(3) {
+        input:checked + label {
+            background-color: palette(answers, n-a);
+        }
+    }
+}
+
+.question-item.open {
+     .question-sub-title {
+         height: $questions-sub-header-height;
+     }
+
+     .question-sub-question-item {
+         height: 75px;
+     }
 }

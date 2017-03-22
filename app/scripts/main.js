@@ -91,9 +91,35 @@ var bindShowClassesButtonEvent = function() {
     });
 };
 
-var loadLogin = function() {
-    console.log('lol');
-    $('#app-content').load('templates/login.html');
+/************************
+ * Next/Back Animations *
+ ************************/
+
+/**
+ * animates a screen comming from right
+ */
+animateScreensPhaseUp = function (goingOut, goingIn) {
+    $(goingOut).addClass('phaseUp');
+    $(goingIn).removeClass('phaseDown');
+};
+
+/**
+ * binds continue button event
+ */
+bindContinueButtonEvent = function() {
+    $('#continue-button').bind('click', function() {
+        // phase up login screen
+        animateScreensPhaseUp('.login-wrapper', '.question-wrapper');
+    });
+};
+
+/**
+ * binds event to click radio buttons
+ */
+bindQuestionAnswersClickEvent = function() {
+    $('.label-for-radio-answer').bind('click', function() {
+        $(this).parent().siblings().find('input').prop('checked', false);
+    });
 };
 
 /** 
@@ -103,6 +129,8 @@ var bindEventsToElems = function() {
     //bindRemoveFocusedBoxesEvent();
     //bindFillBoxEvents();
     bindShowClassesButtonEvent();
+    bindContinueButtonEvent();
+    bindQuestionAnswersClickEvent();
 };
 
 /**

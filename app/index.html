@@ -15,7 +15,7 @@
 
     <main class="app-content">
         <!-- information-tip -->
-        <section class="login-wrapper">
+        <section class="login-wrapper phaseUp"> <!-- remove phaseUp class for correct order -->
             <section class="information-tip">
                 <div class="info-tip-icon"><em>i</em></div>
                 <p class="info-tip-closed-text">
@@ -87,14 +87,55 @@
         </section>
 
         <!-- questions wrapper -->
+        <section class="question-wrapper"> <!-- add phaseDown class for correct order -->
+            
+            <section class="question-item open">
+                <section class="question-item-header">
+                    <p class="question-item-header-number">01</p>
+                    <p class="question-item-header-title">Pre-Flight / Taxi</p>
+                </section>
+                <section class="questions-group-zone">
+                    <!-- sub question zone -->
+                    <section class="question-sub-title">
+                        <p class="question-sub-header-name">Dispatch</p>
+                        <div class="questions-sub-choices">
+                        </div>
+                    </section>
+
+                        <!-- sub question questions -->
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">01</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-01" name="standard-evaluation-01" value="standard" checked>
+                                <label class="label-for-radio-answer" for="standard-evaluation-01"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-01" name="non-standard-evaluation-01" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-01"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-01" id="non-applicable-evaluation-01" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-01"></label>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
 
     </main>
 
+    <!-- buttons wrapper -->
     <section class="buttons-wrapper">
         <button class="bottom-big-buttons" id="close-button">Close</button>
         <button class="bottom-big-buttons" id="continue-button">Continue</button>
-        <button class="bottom-small-button" id="cancel-button">Cancel this form</button>
+        <button class="bottom-small-buttons" id="cancel-button">Cancel this form</button>
     </section>
+
     <!-- footer -->
     <footer class="app-footer">
         Training syllabi and checking programmes - A320F LC | 14 APR 2017 | Rev.01

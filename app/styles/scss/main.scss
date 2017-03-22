@@ -3,6 +3,9 @@
         '_mixins',
         '_common';
 
+$body-bottom-padding: 145px;
+$side-padding: 60px;
+
 * {
     box-sizing: border-box;
     font-family: "Segoe UI", Arial, sans-serif;
@@ -17,8 +20,9 @@ html, body {
 
 body {
     padding-top: $header-height;
-    padding-bottom: $footer-height;
+    padding-bottom: $body-bottom-padding;
     background-color: palette(background);
+    overflow: hidden;
 }
 
 .showClasses {
@@ -36,6 +40,7 @@ body {
     box-shadow: 0 2px 2px 0 rgba(102, 102, 102, 0.12);
     cursor: pointer;
     outline: transparent;
+    z-index: 100;
 
     -webkit-transition: background-color 0.3s ease-out;
     -o-transition: background-color 0.3s ease-out;
@@ -45,13 +50,6 @@ body {
         box-shadow: 0;
         background-color: $blue-500;
     }
-}
-
-.login-wrapper {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
 }
 
 .classAtTop {

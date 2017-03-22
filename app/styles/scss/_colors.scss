@@ -1,4 +1,5 @@
 // blacks
+$black-400: #444444;
 $black-500: #333333;
 
 // blues
@@ -52,12 +53,16 @@ $mainThemePalettes: (
 
     border: (
         base: $gray-500,
-        box-left-border: $blue-500
+        box-left-border: $blue-500,
+        question-border: $gray-400
     ),
 
     background: (
         base: $gray-300,
-        person-boxes: $gray-200
+        person-boxes: $gray-200,
+        buttons-box: $black-400,
+        button-continue: $blue-500,
+        sub-title-questions: $gray-400
     )
 );
 

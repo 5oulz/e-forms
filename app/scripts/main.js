@@ -122,6 +122,69 @@ bindQuestionAnswersClickEvent = function() {
     });
 };
 
+/**
+ * binds event to select all standard answers
+ */
+bindSelectAllStandardAnswers = function() {
+    $('.answer-options-header.clickable').bind('click', function(ev) {
+        ev.stopPropagation();
+
+        $(this).parents('.questions-group-zone').find('input').prop('checked', false);
+        $(this).parents('.questions-group-zone').find('input[value="standard"]').prop('checked', true);
+    });
+};
+
+/**
+ * opens and closes a question group
+ */
+bindOpenCloseQuestionGroup = function() {
+    $('.question-item').bind('click', function(ev) {
+        ev.stopPropagation();
+
+        if( $(this).hasClass('open') ) {
+            $(this).removeClass('open');
+            $(this).find('.questions-group-zone').removeClass('open');
+        } else {
+            $(this).addClass('open');
+            $($(this).find('.questions-group-zone')[0]).addClass('open');
+        }
+
+    });
+};
+
+/**
+ * opens and closes a sub question group
+ */
+bindOpenCloseSubQuestionsGroup = function() {
+    $('.questions-group-zone').bind('click', function(ev) {
+        ev.stopPropagation();
+
+        $(this).toggleClass('open');
+    });
+};
+
+/**
+ * opens and closes edit captain info group
+ */
+bindEditCaptainInfoButton = function() {
+    $('.edit-person-details-button').bind('click', function(ev) {
+        ev.stopPropagation();
+
+        $(this).parents('.person-box').addClass('notComplete');
+    });
+};
+
+/**
+ * opens and closes edit captain info group
+ */
+bindConfirmCaptainInfoButton = function() {
+    $('.confirm-captain-details-button').bind('click', function(ev) {
+        ev.stopPropagation();
+
+        $(this).parents('.person-box').removeClass('notComplete');
+    });
+};
+
 /** 
  * bind events functions go here
  */
@@ -131,6 +194,11 @@ var bindEventsToElems = function() {
     bindShowClassesButtonEvent();
     bindContinueButtonEvent();
     bindQuestionAnswersClickEvent();
+    bindSelectAllStandardAnswers();
+    bindOpenCloseQuestionGroup();
+    bindOpenCloseSubQuestionsGroup();
+    bindEditCaptainInfoButton();
+    bindConfirmCaptainInfoButton();
 };
 
 /**

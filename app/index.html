@@ -15,7 +15,7 @@
 
     <main class="app-content">
         <!-- information-tip -->
-        <section class="login-wrapper phaseUp"> <!-- remove phaseUp class for correct order -->
+        <section class="login-wrapper"> <!-- remove phaseUp class for correct order -->
             <section class="information-tip">
                 <div class="info-tip-icon"><em>i</em></div>
                 <p class="info-tip-closed-text">
@@ -27,13 +27,14 @@
             <!-- pilot box -->
             <section class="person-box">
                 <div class="person-images">
-                    <div class="cmdt-icon">
-                        <img src="images/captain-icon.png" alt="captain-icon">
+                    <div class="cmdt-icon profile-image" style="background-image: url('http://addicted-pilots.com/wp-content/uploads/2015/12/pilot-stress.jpg');">
                     </div>
-                    <div class="cmdt-label">CM 1</div>
                 </div>
                 <div class="person-info">
-                    <div class="person-info-field">
+                    <input class="pilot-label-input" value="CM 1" disabled/>
+                    <input class="pilot-name-input" value="Arlindo Nome de Teste" disabled/>
+                    <input class="pilot-number-input" value="38274.2" disabled/>
+                    <!--<div class="person-info-field">
                         <label class="person-info-label">NAME</label>
                         <input class="person-info-input" type="text"/>
                     </div>
@@ -41,8 +42,31 @@
                     <div class="person-info-field">
                         <label class="person-info-label">TAP NUMBER</label>
                         <input class="person-info-input" type=""/>
-                    </div>
+                    </div>-->
                 </div>
+                <div class="person-options">
+                    <button class="edit-person-details-button">change captain</button>
+                </div>
+                <section class="edit-captain-info-wrapper">
+                    <div class="cmdt-icon">
+                        <img src="images/captain-icon.png" alt="captain-icon">
+                    </div>
+                    <div class="captain-info-fields-wrapper">
+                        <div class="captain-info-field">
+                            <label class="person-info-label">NAME</label>
+                            <input class="person-info-input" type="text"/>
+                        </div>
+
+                        <div class="captain-info-field">
+                            <label class="person-info-label">TAP NUMBER</label>
+                            <input class="person-info-input" type=""/>
+                        </div>
+                    </div>
+
+                    <div class="captain-options">
+                        <button class="confirm-captain-details-button">OK</button>
+                    </div>
+                </section>
             </section>
 
                 <!-- pilot box -->
@@ -87,28 +111,187 @@
         </section>
 
         <!-- questions wrapper -->
-        <section class="question-wrapper"> <!-- add phaseDown class for correct order -->
+        <section class="question-wrapper phaseDown"> <!-- add phaseDown class for correct order -->
             
-            <section class="question-item open">
+            <section class="question-item">
                 <section class="question-item-header">
                     <p class="question-item-header-number">01</p>
                     <p class="question-item-header-title">Pre-Flight / Taxi</p>
                 </section>
                 <section class="questions-group-zone">
+                    
                     <!-- sub question zone -->
                     <section class="question-sub-title">
                         <p class="question-sub-header-name">Dispatch</p>
                         <div class="questions-sub-choices">
+                            <div class="answer-options-header clickable">Standard</div>
+                            <div class="answer-options-header">NSTD</div>
+                            <div class="answer-options-header">N/A</div>
                         </div>
                     </section>
 
-                        <!-- sub question questions -->
+                    <!-- sub question questions -->
                     <section class="question-sub-question-item">
                         <p class="sub-question-item-number">01</p>
                         <p class="sub-question-item-title">Flight plan</p>
                         <section class="sub-question-answers-wrapper">
                             <div class="radio-click-wrapper">
-                                <input type="radio" id="standard-evaluation-01" name="standard-evaluation-01" value="standard" checked>
+                                <input type="radio" id="standard-evaluation-07" name="standard-evaluation-07" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-07"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-07" name="non-standard-evaluation-07" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-07"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-07" id="non-applicable-evaluation-07" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-07"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">02</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-02" name="standard-evaluation-02" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-02"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-02" name="non-standard-evaluation-02" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-02"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-02" id="non-applicable-evaluation-02" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-02"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">03</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-03" name="standard-evaluation-03" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-03"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-03" name="non-standard-evaluation-03" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-03"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-03" id="non-applicable-evaluation-03" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-03"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">04</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-04" name="standard-evaluation-04" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-04"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-04" name="non-standard-evaluation-04" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-04"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-04" id="non-applicable-evaluation-04" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-04"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">05</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-05" name="standard-evaluation-05" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-05"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-05" name="non-standard-evaluation-05" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-05"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-05" id="non-applicable-evaluation-05" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-05"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">06</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-06" name="standard-evaluation-06" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-06"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-06" name="non-standard-evaluation-06" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-06"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-06" id="non-applicable-evaluation-06" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-06"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">07</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-07" name="standard-evaluation-07" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-07"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-07" name="non-standard-evaluation-07" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-07"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-07" id="non-applicable-evaluation-07" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-07"></label>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+                
+                <section class="questions-group-zone">
+                    
+                    <!-- sub question zone -->
+                    <section class="question-sub-title">
+                        <p class="question-sub-header-name">Before Blocks Off</p>
+                        <div class="questions-sub-choices">
+                            <div class="answer-options-header clickable">Standard</div>
+                            <div class="answer-options-header">NSTD</div>
+                            <div class="answer-options-header">N/A</div>
+                        </div>
+                    </section>
+
+                    <!-- sub question questions -->
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">01</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-01" name="standard-evaluation-01" value="standard" >
                                 <label class="label-for-radio-answer" for="standard-evaluation-01"></label>
                             </div>
 
@@ -120,6 +303,281 @@
                             <div class="radio-click-wrapper">
                                 <input type="radio" name="non-applicable-evaluation-01" id="non-applicable-evaluation-01" value="non-applicable">
                                 <label class="label-for-radio-answer" for="non-applicable-evaluation-01"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">02</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-02" name="standard-evaluation-02" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-02"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-02" name="non-standard-evaluation-02" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-02"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-02" id="non-applicable-evaluation-02" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-02"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">03</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-03" name="standard-evaluation-03" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-03"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-03" name="non-standard-evaluation-03" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-03"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-03" id="non-applicable-evaluation-03" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-03"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">04</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-04" name="standard-evaluation-04" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-04"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-04" name="non-standard-evaluation-04" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-04"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-04" id="non-applicable-evaluation-04" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-04"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">05</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-05" name="standard-evaluation-05" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-05"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-05" name="non-standard-evaluation-05" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-05"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-05" id="non-applicable-evaluation-05" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-05"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">06</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-06" name="standard-evaluation-06" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-06"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-06" name="non-standard-evaluation-06" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-06"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-06" id="non-applicable-evaluation-06" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-06"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">07</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-07" name="standard-evaluation-07" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-07"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-07" name="non-standard-evaluation-07" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-07"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-07" id="non-applicable-evaluation-07" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-07"></label>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+
+                <section class="questions-group-zone">
+                    
+                    <!-- sub question zone -->
+                    <section class="question-sub-title">
+                        <p class="question-sub-header-name">Dispatch</p>
+                        <div class="questions-sub-choices">
+                            <div class="answer-options-header clickable">Standard</div>
+                            <div class="answer-options-header">NSTD</div>
+                            <div class="answer-options-header">N/A</div>
+                        </div>
+                    </section>
+
+                    <!-- sub question questions -->
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">01</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-01" name="standard-evaluation-01" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-01"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-01" name="non-standard-evaluation-01" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-01"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-01" id="non-applicable-evaluation-01" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-01"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">02</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-02" name="standard-evaluation-02" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-02"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-02" name="non-standard-evaluation-02" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-02"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-02" id="non-applicable-evaluation-02" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-02"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">03</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-03" name="standard-evaluation-03" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-03"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-03" name="non-standard-evaluation-03" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-03"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-03" id="non-applicable-evaluation-03" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-03"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">04</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-04" name="standard-evaluation-04" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-04"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-04" name="non-standard-evaluation-04" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-04"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-04" id="non-applicable-evaluation-04" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-04"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">05</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-05" name="standard-evaluation-05" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-05"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-05" name="non-standard-evaluation-05" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-05"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-05" id="non-applicable-evaluation-05" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-05"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">06</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-06" name="standard-evaluation-06" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-06"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-06" name="non-standard-evaluation-06" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-06"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-06" id="non-applicable-evaluation-06" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-06"></label>
+                            </div>
+                        </section>
+                    </section>
+                    <section class="question-sub-question-item">
+                        <p class="sub-question-item-number">07</p>
+                        <p class="sub-question-item-title">Flight plan</p>
+                        <section class="sub-question-answers-wrapper">
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="standard-evaluation-07" name="standard-evaluation-07" value="standard" >
+                                <label class="label-for-radio-answer" for="standard-evaluation-07"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" id="non-standard-evaluation-07" name="non-standard-evaluation-07" value="non-standard">
+                                <label class="label-for-radio-answer" for="non-standard-evaluation-07"></label>
+                            </div>
+
+                            <div class="radio-click-wrapper">
+                                <input type="radio" name="non-applicable-evaluation-07" id="non-applicable-evaluation-07" value="non-applicable">
+                                <label class="label-for-radio-answer" for="non-applicable-evaluation-07"></label>
                             </div>
                         </section>
                     </section>

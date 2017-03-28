@@ -214,7 +214,14 @@ $questions-sub-header-height: 40px;
     text-align: right;
     width: 30px;
     font-size: 14px;
-    color: palette(border, box-left-border);
+    float: left;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    background-color: palette(border, box-left-border);
 }
 
 .captain-info-fields-wrapper {
@@ -225,12 +232,37 @@ $questions-sub-header-height: 40px;
     padding: 30px 0;
 }
 
-.captain-info-field {
+.captain-info-field,
+.captain-info-field-half {
     display: block;
     position: relative;
     float: left;
     width: 100%;
-    height: 50%;
+    height: 70px;
+}
+
+.captain-info-field-half {
+    display: inline-block;
+    width: 50%;
+    padding: 10px 0 30px 0;
+
+    .person-info-label {
+        display: inline-block;
+        width: 80%;
+        height: 100%;
+        min-width: 100px;
+        font-size: 14px;
+        line-height: 30px;
+        font-weight: 400;
+        padding-left: 10px;
+    }
+    
+    .person-info-input {
+        display: inline-block;
+        width: 20px;
+        float: left;
+        box-shadow: none;
+    }
 }
 
 .edit-captain-info-wrapper {
